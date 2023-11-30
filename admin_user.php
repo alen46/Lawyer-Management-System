@@ -44,7 +44,7 @@
 			<title></title>
 		</head>
 		<body>
-			<header class="customnav bg-success">
+			<header class="customnav">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -105,11 +105,7 @@
 													<th>First name</th>
 													<th>Last name</th>
 													<th>Email</th>
-													<th>Contact Number</th>
-													<th>Full Address</th>
 													<th>City</th>
-													<th>Zip Code</th>
-													<th>Image</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -124,14 +120,10 @@
 													<tr>
 														<td><?php echo ++$counter ;?></td>
 														<td><?php echo $row["u_id"]; ?></td>
-														<td><?php echo $row["first_Name"]; ?></td>
-														<td><?php echo $row["last_Name"]; ?></td>
+														<td><?php echo $row["first_name"]; ?></td>
+														<td><?php echo $row["last_name"]; ?></td>
 														<td><?php echo $row["email"]; ?></td>
-														<td>+88<?php echo $row["contact_number"]; ?></td>
-														<td><?php echo $row["full_address"]; ?></td>
 														<td><?php echo $row["city"]; ?></td>
-														<td><?php echo $row["zip_code"]; ?></td>
-														<td><img src="images/upload/<?php echo $row["image"]; ?>" class="img-fluid " alt="<?php echo $row["image"]; ?>"></td>
 														<?php if ($row['status']=='Active'){ ?>
 															<td>
 																<a class="btn btn-sm btn-danger" href="admin_user.php?block_id=<?=$row['u_id']?>"><i class="fa fa-ban"></i>&nbsp; Block</a>

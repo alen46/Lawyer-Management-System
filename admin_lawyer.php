@@ -119,12 +119,21 @@
 														<td><?php echo $row["speciality"]; ?></td>
 														<?php if ($row['status']=='Active'){ ?>
 															<td>
-																Active
+																<b>Active</b>
+																<a class="btn btn-sm btn-danger" href="reject_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Reject</a>
+
+															</td>
+															<?php } else if ($row['status']=='Rejected'){ ?>
+															<td>
+																<b>Rejected</b>
+																<a class="btn btn-sm btn-success" href="approve_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Approve</a>
+
 															</td>
 															<?php }
 															else{?>
 															<td>
-																<a class="btn btn-sm btn-warning" href="approve_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Pending</a>
+																<a class="btn btn-sm btn-success" href="approve_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Approve</a>
+																<a class="btn btn-sm btn-danger" href="reject_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Reject</a>
 															</td>
 														<?php }?>
 													</tr>
