@@ -93,9 +93,9 @@
 									<div class="card" style="width: 18rem;">
 										<img src="images/upload/<?php echo $row["image"]; ?>" class="card-img-top cusimg img-fluid" alt="img">
 										<div class="card-body">
-											<h5 class="card-title"><?php echo $row["first_Name"]; ?> <?php echo $row["last_Name"]; ?></h5> <!--lawyers name dynamic-->
+											<h5 class="card-title"><?php echo $row["first_name"]; ?> <?php echo $row["last_name"]; ?></h5> <!--lawyers name dynamic-->
 											<h6 class="card-title"><?php echo $row["speciality"]; ?></h6> <!--lawyers practice speciality dynamic-->
-											<h6 class="card-title"><span><?php echo $row["practise_Length"]; ?></span></h6> <!--lawyers practice time dynamic-->
+											<h6 class="card-title"><span><?php echo $row["experience"]; ?></span></h6> <!--lawyers practice time dynamic-->
 											
 											<a class="btn btn-sm btn-info" href="single_lawyer.php?u_id=<?php echo $row["u_id"]; ?>"><i class="fa fa-street-view"></i>&nbsp; View Full Profile</a>
 										</div>

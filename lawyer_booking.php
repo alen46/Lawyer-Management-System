@@ -34,7 +34,7 @@
 			<title></title>
 		</head>
 		<body>
-			<header class="customnav bg-success">
+			<header class="customnav">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -113,14 +113,21 @@
 														<td><?php echo $row["description"]; ?></td>
 														<?php if ($row['statuss']=='Pending'){ ?>
 															<td>
-																<a class="btn btn-sm btn-warning" href="lawyer_booking.php?unblock_id=<?=$row['booking_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Pending</a>
+																<a class="btn btn-sm btn-success" href="lawyer_booking.php?unblock_id=<?=$row['booking_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Accept</a>
+																<a class="btn btn-sm btn-danger" href="reject_booking.php?unblock_id=<?=$row['booking_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Reject</a>
 															</td>
 															<?php }
-															else{?>
+															else if($row['statuss']=='Accepted'){?>
 															<td>
-																Active
+																<span style="color: green;"><b>Accepted</b></span>
 															</td>
-														<?php }?>
+														<?php }
+														elseif($row['statuss']=='Rejected'){?>
+															<td>
+															<span style="color: red;"><b>Rejected</b></span>
+															</td>
+														<?php }
+														?>
 													</tr>
 													<?php
 													}
@@ -142,7 +149,7 @@
 				
 				
 			</body>
-			<footer class ="bg-success">
+			<footer class ="bg">
 				<div class="container">
 					<div class="row">
 						<div class="col">

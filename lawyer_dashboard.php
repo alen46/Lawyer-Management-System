@@ -24,7 +24,7 @@
 			<title></title>
 		</head>
 		<body>
-			<header class="customnav bg-success">
+			<header class="customnav">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -87,10 +87,10 @@
 				
 			</body>
 			<footer>
-				<div class="container bg-success">
+				<div class="bg">
 					<div class="row">
 						<div class="col">
-							<h5>All rights reserved 2022</h5>
+							<h5>All rights reserved 2024</h5>
 						</div>
 					</div>
 				</div>
