@@ -37,7 +37,7 @@
 		//Check duplicate value
 		
 		// sql query for inserting data into database
-		$sql = "INSERT INTO `booking`(date, description, client_id, lawyer_id, status) VALUES('$date','$description','$client_id','$lawyer_id','Pending')";
+		$sql = "INSERT INTO `booking`(date, usermsg, client_id, lawyer_id, status) VALUES('$date','$description','$client_id','$lawyer_id','Pending')";
 		//echo $sql;exit;
 		$result=mysqli_query($conn, $sql) or die(mysqli_error ($conn));
 		echo "<script type= 'text/javascript'>MySucessFn();</script>";

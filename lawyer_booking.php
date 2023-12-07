@@ -15,6 +15,11 @@
 			$conn->query($sql);
 			header("Location:lawyer_booking.php");
 		}
+		if (isset($_POST['send'])) {
+		$msg = $_POST['message'];
+        $id = $_POST['id'];
+		$result = mysqli_query($conn,"UPDATE `booking` SET `lawyermsg`='$msg' where `booking_id` = '$id' ");
+		}
 	?>
 	<!doctype html>
 	<html lang="en">
@@ -93,7 +98,9 @@
 													<th>No.</th>
 													<th>Client Name</th>
 													<th>Date</th>
-													<th>Description</th>
+													<th>Status</th>
+													<th>User Message</th>
+													<th>Message</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -101,7 +108,7 @@
 												include_once 'db_con/dbCon.php';
 												$a=$_SESSION['lawyer_id'];
 												$conn = connect();
-												$result = mysqli_query($conn,"SELECT booking_id,first_Name,last_Name,date,description,booking.status as 'statuss' FROM booking,client,user WHERE booking.client_id=client.client_id AND client.client_id=user.u_id and booking.lawyer_id='$a'");
+												$result = mysqli_query($conn,"SELECT booking_id,first_Name,last_Name,date,lawyermsg,usermsg,booking.status as 'statuss' FROM booking,client,user WHERE booking.client_id=client.client_id AND client.client_id=user.u_id and booking.lawyer_id='$a'");
 												$counter = 0;
 												while($row = mysqli_fetch_array($result)) {
 												?>
@@ -110,7 +117,6 @@
 														<td><?php echo ++$counter ;?></td>
 														<td><?php echo $row["first_Name"]; ?> <?php echo $row["last_Name"]; ?></td>
 														<td><?php echo $row["date"]; ?></td>
-														<td><?php echo $row["description"]; ?></td>
 														<?php if ($row['statuss']=='Pending'){ ?>
 															<td>
 																<a class="btn btn-sm btn-success" href="lawyer_booking.php?unblock_id=<?=$row['booking_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Accept</a>
@@ -128,6 +134,10 @@
 															</td>
 														<?php }
 														?>
+															<td><?php echo $row["usermsg"]; ?></td>
+															<td><form action="" method="post"><input type="text" size = "50" name ="message" value="<?php echo $row["lawyermsg"]; ?>"></td>
+															<td><input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" ><input type="submit" name="send" value="send" class="btn btn-sm btn-info"></form></td>
+
 													</tr>
 													<?php
 													}
