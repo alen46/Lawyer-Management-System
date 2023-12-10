@@ -19,6 +19,43 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/media.css">
 		<title></title>
+		<style>
+			.btnFindLawyer, .linkFindLawyer{
+				background: white;
+			   color: rgb(30, 30, 30);
+			   padding-inline: 1em;
+			   padding-block: 0.5em;
+			   border:none;
+			   text-decoration:none;
+			   
+
+			}
+			.btnFindLawyer{
+				box-shadow: 2px 2px 15px #ccc;
+				border-radius: 5px; 
+				transform: scale(1);
+				transition: all 1s linear;
+			}
+			.btnFindLawyer:hover{
+				transform: scale(1.5);
+				transition: all 1s cubic-bezier(.29, 1.01, 1, -0.68);
+			}
+
+			.linkFindLawyer:hover, .linkFindLawyer:active{
+				text-decoration:none;
+				color: rgb(40, 40, 40);
+
+			}
+
+			.card {
+				box-shadow: 3px 3px 16px #ccc;
+				border-radius: 11px;
+			}
+
+			.card:hover{
+				transform: scale(1.1);
+			}
+		</style>
 	</head>
 	<body>
 		<header class="customnav">
@@ -72,7 +109,7 @@
 					<div class="row">
 						<div class="col-md">
 							<div class="banner_content">
-								<button class="btn-lg cusbutton" style="border: 5px solid black;"><a href ="searchLawyer.php" style="color: black; text-decoration: none;"><strong>Find Lawyers</strong></a></button><!--lawyers.html page-->
+								<button class="btnFindLawyer"  ><a href ="searchLawyer.php" class="linkFindLawyer"><strong>Find Lawyers</strong></a></button><!--lawyers.html page-->
 							</div>
 							
 						</div>

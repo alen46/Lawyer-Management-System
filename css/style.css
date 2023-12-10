@@ -183,3 +183,14 @@ footer h5{
     width: 20px;
     opacity: 1;
   }
+
+  .btnFindLawyer {
+    background: white;  
+
+  }
+
+  .linkFindLawyer{
+    background: white;
+    color: rgb(30, 30, 30)
+  }
+ 
