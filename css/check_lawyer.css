@@ -1,4 +1,4 @@
-.detailsSection{
+.detailsSection , .details2Section{
     background : rgb(241, 241, 241);
     padding-inline: 2em;
     padding-block: 2em;
@@ -9,5 +9,13 @@
 .details2Section{
     position:absolute;
     left: 43em;
-    top: 12em;
-}1
+    top: 17em;
+    text-align:center;
+    padding-block: 0em;
+    
+}
+
+.details2Section > *{
+    margin-block:auto;
+    
+}

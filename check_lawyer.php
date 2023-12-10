@@ -115,10 +115,11 @@
                                                     $result1 = mysqli_query($conn,"SELECT * FROM `csv` WHERE enrolment = '$enr'");
                                                     if(mysqli_num_rows($result1) >0){
                                                         while($row1 = mysqli_fetch_array($result1)) {
-                                                        echo "<br><br>";
+                                                        
                                                         echo "<br>".$row1['name'];
                                                         echo "<br>".$row1['enrolment']; 
                                                         echo "<br>".$row1['city'];
+                                                        echo "<br><br>";
                                                         }
                                                     }
                                                     else{
