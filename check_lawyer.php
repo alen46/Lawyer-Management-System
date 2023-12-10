@@ -96,7 +96,7 @@
 														<?php echo $row["city"]; ?><br>
 														<?php echo $row["degree"]; ?><br>
 														<?php echo $row["experience"]; ?><br>
-														<?php echo $row["speciality"]; ?><br>
+														<?php echo $row["speciality"]; ?><br><br>
 														<?php if ($row['status']=='Pending'){ ?>
 																<a class="btn btn-sm btn-success" href="approve_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Approve</a>
 																<a class="btn btn-sm btn-danger" href="reject_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Reject</a>
