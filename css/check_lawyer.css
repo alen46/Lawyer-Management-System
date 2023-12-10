@@ -1,0 +1,7 @@
+.detailsSection{
+    background : rgb(241, 241, 241);
+    padding-inline: 2em;
+    padding-block: 2em;
+    border-radius: 12px;
+    box-shadow: 3px 3px 12px rgb(82, 80, 80);
+}

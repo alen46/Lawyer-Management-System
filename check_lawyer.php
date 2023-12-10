@@ -23,6 +23,7 @@
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/style.css">
 			<link rel="stylesheet" href="css/media.css">
+            <link rel="stylesheet" href="css/check_lawyer.css">
 			<title></title>
 		</head>
 		<body>
