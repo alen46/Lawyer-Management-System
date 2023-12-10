@@ -36,6 +36,13 @@
 			<link rel="stylesheet" href="css/bootstrap.css">
 			<link rel="stylesheet" href="css/style.css">
 			<link rel="stylesheet" href="css/media.css">
+			<style>
+				.message{
+					background: inherit;
+					border: 1px solid #555555;
+					border-radius: 3px;
+				}
+			</style>
 			<title></title>
 		</head>
 		<body>
@@ -135,7 +142,7 @@
 														<?php }
 														?>
 															<td><?php echo $row["usermsg"]; ?></td>
-															<td><form action="" method="post"><input type="text" size = "50" name ="message" value="<?php echo $row["lawyermsg"]; ?>"></td>
+															<td><form action="" method="post"><input class="message" type="text" size = "50" name ="message" value="<?php echo $row["lawyermsg"]; ?>"></td>
 															<td><input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" ><input type="submit" name="send" value="send" class="btn btn-sm btn-info"></form></td>
 
 													</tr>

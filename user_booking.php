@@ -9,6 +9,7 @@
 		$msg = $_POST['message'];
         $id = $_POST['id'];
 		$result = mysqli_query($conn,"UPDATE `booking` SET `usermsg`='$msg' where `booking_id` = '$id' ");
+
 		}
 	?>
 	<!doctype html>
@@ -27,6 +28,19 @@
 			<link rel="stylesheet" href="css/style.css">
 			<link rel="stylesheet" href="css/media.css">
 			<title></title>
+			<style>
+				.message{
+					padding-inline:1em;
+					background: inherit;
+					border: 1px solid #555555;
+					border-radius: 3px;
+				}
+				.message:focus, .message-focus-visible {
+					
+					outline:1px solid ;
+					
+				}
+			</style>
 		</head>
 		<body>
 			<header class="customnav">
@@ -124,7 +138,7 @@
 															<?php }
 															else if($row['statuss']=='Pending') {?>
 															<td><span style="color: blue;"><b>Pending</b></span> </td> <?php } ?>
-														<td><form action="" method="post"><input type="text" size = "50" name ="message" value="<?php echo $row["usermsg"]; ?>"></td>
+														<td><form action="" method="post"><input class="message" type="text" size = "50" name ="message" value="<?php echo $row["usermsg"]; ?>"></td>
 														<td><?php echo $row["lawyermsg"]; ?></td>
 														
 														<td><input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" ><input name="send" type="submit" value="send" class="btn btn-sm btn-info"></form></td>
