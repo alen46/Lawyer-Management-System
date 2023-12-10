@@ -102,9 +102,15 @@
 																<a class="btn btn-sm btn-danger" href="reject_lawyer.php?unblock_id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Reject</a>
 															
 														<?php }?>
+
 										
 													<?php
                                                 }
+                                                ?>
+                                                </div>
+                                                <div class="details2Section">
+                                                <?php
+
 
                                                     $result1 = mysqli_query($conn,"SELECT * FROM `csv` WHERE enrolment = '$enr'");
                                                     if(mysqli_num_rows($result1) >0){
@@ -119,7 +125,8 @@
                                                         echo "<b>No Records Found</b>";
                                                     }
 												?>
-										</div>
+                                                </div>
+										
                                             
 										</div> <!-- /widget-content -->
 										
