@@ -24,7 +24,7 @@
 			<title></title>
 		</head>
 		<body>
-			<header class="customnav bg-success">
+			<header class="customnav">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
@@ -180,7 +180,7 @@
 				
 				
 			</body>
-			<footer class="bg-success">
+			<footer class="bg">
 				<div class="container">
 					<div class="row">
 						<div class="col">

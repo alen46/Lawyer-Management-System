@@ -86,8 +86,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<h2>Hello !!! <i class="fas fa-hand-paper"></i></h2><hr/>
-						<h4>Login here to find suitable lawyers or User Request <i class="fas fa-hand-point-right"></i></h4>
+						<img src="images/login.png" class="img-fluid" alt="">
 					</div>
 					<div class="col-md-6">
 						<form action="db_con/db_login.php" method="POST"  id="validateForm">

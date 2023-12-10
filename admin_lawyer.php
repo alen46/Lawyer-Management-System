@@ -93,7 +93,9 @@
 													<th>Degree</th>
 													<th>Experience</th>
 													<th>Speciality</th>
-													<th>Action</th>
+													<th>Check</th>
+													<th>Status</th>
+													
 												</tr>
 											</thead>
 											<?php
@@ -117,6 +119,7 @@
 														<td><?php echo $row["degree"]; ?></td>
 														<td><?php echo $row["experience"]; ?></td>
 														<td><?php echo $row["speciality"]; ?></td>
+														<td><a class="btn btn-sm btn-secondary" href="check_lawyer.php?id=<?=$row['u_id']?>"><i class="fas fa-hourglass"></i>&nbsp; Check</a></td>
 														<?php if ($row['status']=='Active'){ ?>
 															<td>
 																<b>Active</b>
