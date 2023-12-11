@@ -130,10 +130,11 @@
 															<label for="practise">Experience</label>
 															<select id="practise" name="practise_Length" class="form-control">
 																<option value=" " selected>Choose...</option>
-																<option value="1-5 years" <?php if ($row['experience']=='1-5 years'){echo "selected";}?>>1-5 years</option>
+																<option value="0-5 years" <?php if ($row['experience']=='0-5 years'){echo "selected";}?>>0-5 years</option>
 																<option value="6-10 years" <?php if ($row['experience']=='6-10 years'){echo "selected";}?>>6-10 years</option>
 																<option value="11-15 years" <?php if ($row['experience']=='11-15 years'){echo "selected";}?>>11-15 years</option>
 																<option value="16-20 years" <?php if ($row['experience']=='16-20 years'){echo "selected";}?>>16-20 years</option>
+																<option value="Morethan 20 years" <?php if ($row['experience']=='Morethan 20 years'){echo "selected";}?>>Morethan 20 years</option>
 															</select>
 														<div class="form-group">
 															<label for="practise">My Speciality</label>
