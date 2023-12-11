@@ -128,7 +128,7 @@
 											<form autocomplete="off" method="post" action="update_password_admin.php">				  
 												<div class="form-group row">
 													<label for="inputPassword" class="col-sm-3 col-form-label">Current Password</label>
-													<div class="col-sm-8" style="fload:right">
+													<div class="col-sm-8" style="float:right">
 														<input type="password" name="current" class="form-control" required id="inputPassword" placeholder="Please Type Your Current Password">
 														
 													</div>
@@ -184,7 +184,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<h5>All rights reserved 2022</h5>
+							<h5>All rights reserved 2024</h5>
 						</div>
 					</div>
 				</div>

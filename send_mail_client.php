@@ -6,7 +6,7 @@
 	use PHPMailer\PHPMailer\SMTP;
 	use PHPMailer\PHPMailer\Exception;
 	$mailto = $email;
-    $mailSub = "Notification For Account Information";
+    $mailSub = "Lawyer Management System Account Information";
 	$message="
 	
 	<table border='1' width='590' align='center' cellpadding='2px' cellspacing='2' >

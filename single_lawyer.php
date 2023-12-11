@@ -138,7 +138,7 @@
 											<input type="date"  name="date" >
 										</div>
 										<div class="col-md-3">
-											<textarea name="description" id="" cols="20" rows="4" placeholder="write description if any"></textarea>
+											<textarea name="description" id="" cols="20" rows="4" placeholder="write message to lawyer if any"></textarea>
 										</div>
 										<div class="col-md-3 float-right">
 											<?php if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){ ?>
@@ -164,7 +164,7 @@
 			<div class="container">
 			<div class="row">
 			<div class="col">
-			<h5>All rights reserved 2020</h5>
+			<h5>All rights reserved 2024</h5>
 			</div>
 			</div>
 			</div>

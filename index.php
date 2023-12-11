@@ -153,8 +153,8 @@
 						<h1>About US</h1>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo debitis magni minus neque, sit culpa, placeat velit aperiam ea sunt eaque vitae  consectetur adipisicing elit. Explicabo debitis magni minus neque, sit culpa, placeat velit aperiam ea sunt eaque vita similique iusto temporibus nihil ducimus repellendus alias eos!</p>
 						<h2>Our Contact details </h2>
-						<h4>Address - Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
-						<h4>Contact no. - +916263056779</h4>
+						<h4>Address - MCA Union Christian College Aluva</h4>
+						<h4>Contact no. - +919497017853</h4>
 					</div>
 				
 				
@@ -164,7 +164,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<h5>All rights reserved. 2022</h5>
+						<h5>All rights reserved. 2024</h5>
 					</div>
 				</div>
 			</div>
