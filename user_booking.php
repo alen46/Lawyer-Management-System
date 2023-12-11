@@ -9,7 +9,11 @@
 		$msg = $_POST['message'];
         $id = $_POST['id'];
 		$result = mysqli_query($conn,"UPDATE `booking` SET `usermsg`='$msg' where `booking_id` = '$id' ");
-
+		}
+		if (isset($_POST['svfeedback'])) {
+			$fbk = $_POST['feedback'];
+			$id = $_POST['id'];
+			$result = mysqli_query($conn,"UPDATE `booking` SET `feedback`='$fbk' where `booking_id` = '$id' ");
 		}
 	?>
 	<!doctype html>
@@ -104,14 +108,14 @@
 													<th>Status</th>
 													<th>Message</th>
 													<th>Reply</th>
-													<th>Action</th>
+													<th>Feedback</th>
 												</tr>
 											</thead>
 											<?php
 												include_once 'db_con/dbCon.php';
 												$a=$_SESSION['client_id'];
 												$conn = connect();
-												$result = mysqli_query($conn,"SELECT booking_id,first_Name,last_Name,date,lawyermsg,usermsg,booking.status as statuss
+												$result = mysqli_query($conn,"SELECT booking_id,feedback,first_Name,last_Name,date,lawyermsg,usermsg,booking.status as statuss
 												FROM booking,lawyer,user 
 												WHERE booking.lawyer_id=lawyer.lawyer_id 
 												AND lawyer.lawyer_id=user.u_id 
@@ -138,10 +142,23 @@
 															<?php }
 															else if($row['statuss']=='Pending') {?>
 															<td><span style="color: blue;"><b>Pending</b></span> </td> <?php } ?>
-														<td><form action="" method="post"><input class="message" type="text" size = "50" name ="message" value="<?php echo $row["usermsg"]; ?>"></td>
-														<td><?php echo $row["lawyermsg"]; ?></td>
+															<td>
+																<form action="" method="post">
+																		<input class="message" type="text" size = "30" name ="message" value="<?php echo $row["usermsg"]; ?>">
+																		<input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" >
+																		<input name="send" type="submit" value="send" class="btn btn-sm btn-info" style="transform: scale(.75);">
+																</form>
+															</td>
+															<td width=500><?php echo $row["lawyermsg"]; ?> </td>
+															<td>
+																<form action="" method="post"> 
+																	<input class="message" type="text" size="30" name="feedback" value="<?php echo $row["feedback"]; ?>">
+																	<input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" >
+																	<input name="svfeedback" type="submit" value="save feedback" class="btn btn-sm btn-info" style="transform: scale(.75);"></form>
+																</form>
+															</td>
 														
-														<td><input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" ><input name="send" type="submit" value="send" class="btn btn-sm btn-info"></form></td>
+														
 													</tr>
 													<?php
 													}
@@ -165,7 +182,7 @@
 				<div class="container">
 				<div class="row">
 				<div class="col">
-				<h5>All rights reserved 2022</h5>
+				<h5>All rights reserved 2024</h5>
 				</div>
 				</div>
 				</div>
