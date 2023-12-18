@@ -17,6 +17,11 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/media.css">
 		<title></title>
+		<style>
+			.error {
+			color: red;
+			}
+		</style>
 	</head>
 	<body>
 		<header class="customnav">
@@ -87,7 +92,6 @@
 								<img src="images/upload/<?php echo $row["image"]; ?>" class="img-fluid profile_img" alt="profile picture">
 								<h2><?php echo $row["first_name"]; ?> <?php echo $row["last_name"]; ?></h2>
 								<h4><?php echo $row["speciality"]; ?></h4>
-								<hr>
 							</div>
 						</div>
 						<div class="col-md-9">
@@ -111,7 +115,7 @@
 								</div>
 								<div class="infogroup row">
 									<div class="col-md-4">
-										<label for="email"><b>Practising location :</b></label>
+										<label for="email"><b>Location :</b></label>
 									</div>
 									<div class="col-md-8">
 										<p><?php echo $row["city"]; ?></p>
@@ -126,31 +130,47 @@
 									</div>
 								</div> 
 								
-								<form action="save_booking.php" method="post">
-									<div class="row">
-										<div class="col-md-3">
-											Book for appointment
-										</div>
+								<form action="save_booking.php" method="post" onsubmit="return validateForm()">
+									<div class="row" style="width:fit-content; gap:0.5em;">
+									<div class="col-md-3">
+										<b>Book for appointment</b>
+									</div>
+									<?php if(isset($_SESSION['login'])){ ?>
 										<input type="hidden" name="lawyer_id"  value="<?php echo $row['u_id']; ?>">
 										<input type="hidden" name="client_id"  value="<?php echo $_SESSION['client_id']; ?>">
-                                    
-										<div class="col-md-3">
-											<input type="date"  name="date" >
-										</div>
-										<div class="col-md-3">
-											<textarea name="description" id="" cols="20" rows="4" placeholder="write message to lawyer if any"></textarea>
-										</div>
-										<div class="col-md-3 float-right">
-											<?php if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){ ?>
-												
-												<input name="post" type="submit" class="btn btn-block btn-info" value="Request booking" />
-												<?php }else{ ?>
-												<h6><a href="login.php">To Request for lawyer booking plese login or registration first</a></h6>
-											<?php }?> 
-										</div>
+									<?php } ?>
+									<div class="col-md-3">
+										<label for="date">Date:</label>
+										<input type="date" name="date" id="date" required>
+										<span id="dateError" class="error"></span>
+									</div>
+									<div class="col-md-3">
+										<textarea name="description" cols="25" rows="2" placeholder="Write a message to the lawyer if any"></textarea>
+									</div>
+									<div class="col-md-3 " style="width:fit-content;">
+										<?php if(isset($_SESSION['login']) && $_SESSION['login'] == TRUE){ ?>
+										<input name="post" type="submit" class="btn btn-block btn-info" style="width:fit-content;" value="Request booking" />
+										<?php } else { ?>
+										<h6><a href="login.php">To request a lawyer booking, please login or register first</a></h6>
+										<?php } ?>
+									</div>
 									</div>
 								</form>
-								
+								<script>
+									function validateForm() {
+									var dateInput = document.getElementById('date');
+									var dateError = document.getElementById('dateError');
+									var selectedDate = new Date(dateInput.value);
+									var currentDate = new Date();
+									if (selectedDate <= currentDate) {
+										dateError.innerHTML = 'Please select a date in the future.';
+										return false;
+									} else {
+										dateError.innerHTML = ''; 
+										return true;
+									}
+									}
+								</script>
 							</div>
 						</div>
 						<?php
@@ -159,7 +179,28 @@
 				</div>
 			</div>
 		</section>
-		
+		<hr>
+		<section>
+			<div class="container">
+				<h5>Feedback</h5>
+				<div class="container">
+				<?php
+					$u_id = mysqli_real_escape_string($conn, $_GET['u_id']); 
+					$qry = "SELECT * FROM booking JOIN user ON booking.client_id = user.u_id WHERE booking.feedback IS NOT NULL AND booking.lawyer_id  = ?";
+					$stmt = mysqli_prepare($conn, $qry);
+					mysqli_stmt_bind_param($stmt, "s", $u_id);
+					mysqli_stmt_execute($stmt);
+					$ress = mysqli_stmt_get_result($stmt);
+					while ($roww = mysqli_fetch_array($ress)) {
+						echo "Name : " . $roww['first_name']." " .$roww['last_name']. "<br>";
+						echo "Email : ".$roww['email']. "<br>";
+						echo "FeedBack : " . $roww['feedback'] . "<br><hr>";
+					}
+					mysqli_stmt_close($stmt);
+					?>
+				</div>
+			</div>
+		</section>
 		<footer class="bg">
 			<div class="container">
 			<div class="row">

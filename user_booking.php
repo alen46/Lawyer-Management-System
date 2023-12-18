@@ -151,14 +151,15 @@
 															</td>
 															<td width=500><?php echo $row["lawyermsg"]; ?> </td>
 															<td>
-																<form action="" method="post"> 
-																	<input class="message" type="text" size="30" name="feedback" value="<?php echo $row["feedback"]; ?>">
-																	<input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" >
-																	<input name="svfeedback" type="submit" value="save feedback" class="btn btn-sm btn-info" style="transform: scale(.75);"></form>
-																</form>
+																<?php 
+																	if($row['statuss'] == 'Accepted' && $row['date'] < date("Y-m-d")){ ?>
+																		<form action="" method="post"> 
+																			<input class="message" type="text" size="30" name="feedback" value="<?php echo $row["feedback"]; ?>">
+																			<input type="hidden" name="id" value=" <?php echo $row["booking_id"]; ?>" >
+																			<input name="svfeedback" type="submit" value="save feedback" class="btn btn-sm btn-info" style="transform: scale(.75);"></form>
+																		</form>
+																<?php } ?>
 															</td>
-														
-														
 													</tr>
 													<?php
 													}
